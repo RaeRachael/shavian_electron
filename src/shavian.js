@@ -29,18 +29,21 @@ displayShavian()
 formButton.addEventListener("submit", function (event) {
   event.preventDefault();   // stop the form from submitting
 
-  let submitted = document.getElementById("latin_text").value
-  displayResults(submitted)
+  let submitted = document.getElementById("latin_text")
+  displayResults(submitted.value)
+  submitted.value = ""
   displayShavian()
 })
 
 function displayResults(submitted) {
   const simulationResults = document.getElementById('result')
-  let result = submitted == word.latin
+  let result_word = dictionary.find(word_data => word_data.latin == submitted) || { ipa: "" }
+  let result = result_word.ipa == word.ipa
+  let colour = result ? "green" : "red"
 
   console.log(word, submitted, result)
 
-  resultHTML = `<ul> ${(result ? "correct" : "wrong")} </ul><br><ul> ${word.shavian} : ${word.latin} : ${word.ipa} </ul>`
+  resultHTML = `<p> submitted: ${submitted} : ${result_word.ipa} </p> <p style="color: ${colour};"> ${(result ? "correct" : "wrong")} </p><p> ${word.shavian} : ${word.latin} : ${word.ipa} </p>`
   simulationResults.innerHTML = resultHTML
 }
 
