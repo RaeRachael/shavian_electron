@@ -37,11 +37,12 @@ formButton.addEventListener("submit", function (event) {
 
 function displayResults(submitted) {
   const simulationResults = document.getElementById('result')
-  let result_word = dictionary.find(word_data => word_data.latin == submitted) || { ipa: "" }
+  let result_words = dictionary.filter(word_data => word_data.latin == submitted)
+  let result_word = result_words.find(word_found => word_found.ipa == word.ipa) || { ipa: "" }
   let result = result_word.ipa == word.ipa
   let colour = result ? "green" : "red"
 
-  console.log(word, submitted, result)
+  console.log(word, submitted, result, result_words)
 
   resultHTML = `<p> submitted: ${submitted} : ${result_word.ipa} </p> <p style="color: ${colour};"> ${(result ? "correct" : "wrong")} </p><p> ${word.shavian} : ${word.latin} : ${word.ipa} </p>`
   simulationResults.innerHTML = resultHTML

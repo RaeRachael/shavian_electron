@@ -49812,13 +49812,13 @@
     },
     {
       "latin": "for",
-      "shavian": "𐑓",
-      "ipa": "F"
+      "shavian": "𐑓𐑹",
+      "ipa": "fɔː"
     },
     {
       "latin": "for",
-      "shavian": "𐑓",
-      "ipa": "F"
+      "shavian": "𐑓 - abbrv",
+      "ipa": "fɔː"
     },
     {
       "latin": "forage",
@@ -60959,6 +60959,11 @@
       "latin": "hue",
       "shavian": "𐑣𐑿",
       "ipa": "hjuː"
+    },
+    {
+      "latin": "hues",
+      "shavian": "𐑣𐑿𐑟",
+      "ipa": "hjuːz"
     },
     {
       "latin": "huff",
@@ -111897,11 +111902,6 @@
     },
     {
       "latin": "second",
-      "shavian": "𐑕𐑧𐑒𐑩𐑯𐑛",
-      "ipa": "ˈsekənd"
-    },
-    {
-      "latin": "second",
       "shavian": "𐑕𐑦𐑒𐑪𐑯𐑛",
       "ipa": "sɪˈkɒnd"
     },
@@ -141079,6 +141079,11 @@
       "latin": "whale",
       "shavian": "𐑢𐑱𐑤",
       "ipa": "ʍeɪl"
+    },
+    {
+      "latin": "whales",
+      "shavian": "𐑢𐑱𐑤𐑟",
+      "ipa": "ʍeɪlz"
     },
     {
       "latin": "whaling",
