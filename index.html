@@ -10,16 +10,31 @@
 </head>
 
 <body>
-  <div id="shavian"></div>
+  <div id="shavian-to-latin-test">
+    <div id="shavian"></div>
+    <button type="button" id="reset" style="visibility: hidden;">restart</button>
+    <form action="#" id="form" style="visibility: visible;">
+      latin: <input type="string" id="latin_text">
+      <br><br>
+      <input id="submit" type="submit" value="submit">
+    </form>
+    <div id="result"></div>
+    <script src="./src/shavian.js"></script>
   </div>
-  <button type="button" id="reset" style="visibility: hidden;">restart</button>
-  <form action="#" id="form" style="visibility: visible;">
-    latin: <input type="string" name="Food" id="latin_text">
-    <br><br>
-    <input id="submit" type="submit" value="submit">
-  </form>
-  <div id="result"></div>
-  <script src="./src/shavian.js"></script>
+
+  <div id="shavian-pronounce">
+    <form action="#" id="form-pronounce" style="visibility: visible;">
+      shavian: <input type="string" id="shavian-pronounce-input">
+      <br><br>
+      <input id="submit-shavian" type="submit" value="submit">
+    </form>
+    <script src="./src/mespeak.js"></script>
+    <script type="text/javascript">
+      meSpeak.loadConfig("./src/mespeak_config.json");
+      meSpeak.loadVoice("./src/en.json");
+    </script>
+    <script src="./src/shavian-pronounce.js"></script>
+  </div>
 </body>
 
 </html>
