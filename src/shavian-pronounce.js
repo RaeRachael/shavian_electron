@@ -1,4 +1,11 @@
 const formButtonPronounce = document.querySelector("#form-pronounce")
+const buttonPronounce = document.getElementById("pronounce")
+
+buttonPronounce.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  pronouceWord(word.ipa)
+})
 
 formButtonPronounce.addEventListener("submit", function (event) {
   event.preventDefault();   // stop the form from submitting
@@ -8,7 +15,10 @@ formButtonPronounce.addEventListener("submit", function (event) {
 
   console.log(submitted, result_word)
   uipa = result_word.ipa;
+  pronouceWord(uipa)
+})
 
+function pronouceWord(uipa) {
   // nothing to process
   if (uipa == null || uipa.length == 0) {
     return;
@@ -147,5 +157,4 @@ formButtonPronounce.addEventListener("submit", function (event) {
   }
 
   meSpeak.play(spoken);
-
-})
+}

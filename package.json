@@ -1,7 +1,6 @@
 {
-  "name": "electron_biods",
+  "name": "shavian_learner",
   "version": "1.0.0",
-  "description": "2d boids",
   "main": "./src/index.js",
   "scripts": {
     "test": "jest --coverage",
