@@ -6,26 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style.css">
 
+  <style>
+    .column {
+      float: left;
+      width: 50%;
+      display: grid;
+      justify-content: center;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .hidden {
+      display: none
+    }
+  </style>
+
   <title>Shavian learner</title>
 </head>
 
 <body>
   <div id="shavian-to-latin-test">
-    <div id="shavian"></div>
-    <button id="pronounce"> pronounce </button>
+    <div class="row">
+      <div id="shavian" class="column" style="justify-content: right;"></div>
+      <button id="pronounce" class="column" style="width: 5em;top: 50%;transform: translateY(-50%);position: sticky;">
+        pronounce </button>
+    </div>
     <form action="#" id="form" style="visibility: visible;">
       latin: <input type="string" id="latin_text">
-      <br><br>
       <input id="submit" type="submit" value="submit">
     </form>
     <div id="result"></div>
     <script src="./src/shavian.js"></script>
   </div>
 
+  <br><br>
+
   <div id="shavian-pronounce">
     <form action="#" id="form-pronounce" style="visibility: visible;">
       shavian: <input type="string" id="shavian-pronounce-input">
-      <br><br>
       <input id="submit-shavian" type="submit" value="submit">
     </form>
     <script src="./src/mespeak.js"></script>

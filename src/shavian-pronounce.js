@@ -11,12 +11,73 @@ formButtonPronounce.addEventListener("submit", function (event) {
   event.preventDefault();   // stop the form from submitting
 
   let submitted = document.getElementById("shavian-pronounce-input").value
-  let result_word = dictionary.find(word => word.shavian == submitted)
+  let uipa = getIPA(submitted)
 
-  console.log(submitted, result_word)
-  uipa = result_word.ipa;
+  console.log(submitted, uipa)
   pronouceWord(uipa)
 })
+
+function getIPA(text) {
+  var mappings = [
+    { 'src': "𐑐", 'dest': "p" },
+    { 'src': "𐑑", 'dest': "t" },
+    { 'src': "𐑒", 'dest': "k" },
+    { 'src': "𐑓", 'dest': "f" },
+    { 'src': "𐑔", 'dest': "θ" },
+    { 'src': "𐑕", 'dest': "s" },
+    { 'src': "𐑖", 'dest': "ʃ" },
+    { 'src': "𐑗", 'dest': "tʃ" },
+    { 'src': "𐑘", 'dest': "j" },
+    { 'src': "𐑙", 'dest': "ŋ" },
+
+    { 'src': "𐑚", 'dest': "b" },
+    { 'src': "𐑛", 'dest': "d" },
+    { 'src': "𐑜", 'dest': "g" },
+    { 'src': "𐑝", 'dest': "v" },
+    { 'src': "𐑔", 'dest': "ð" },
+    { 'src': "𐑟", 'dest': "z" },
+    { 'src': "𐑠", 'dest': "ʒ" },
+    { 'src': "𐑡", 'dest': "dʒ" },
+    { 'src': "𐑢", 'dest': "w" },
+    { 'src': "𐑣", 'dest': "h" },
+
+    { 'src': "𐑤", 'dest': "l" },
+    { 'src': "𐑮", 'dest': "r" },
+    { 'src': "𐑥", 'dest': "m" },
+    { 'src': "𐑯", 'dest': "n" },
+
+    { 'src': "𐑦", 'dest': "ɪ" },
+    { 'src': "𐑰", 'dest': "iː" },
+    { 'src': "𐑧", 'dest': "ɛ" },
+    { 'src': "𐑱", 'dest': "eɪ" },
+    { 'src': "𐑨", 'dest': "æ" },
+    { 'src': "𐑲", 'dest': "aɪ" },
+
+    { 'src': "𐑩", 'dest': "ə" },
+    { 'src': "𐑳", 'dest': "ʌ" },
+    { 'src': "𐑪", 'dest': "ɒ" },
+    { 'src': "𐑴", 'dest': "əʊ" },
+    { 'src': "𐑫", 'dest': "ʊ" },
+    { 'src': "𐑵", 'dest': "uː" },
+    { 'src': "𐑬", 'dest': "aʊ" },
+    { 'src': "𐑶", 'dest': "ɔɪ" },
+    { 'src': "𐑭", 'dest': "ɑː" },
+    { 'src': "𐑷", 'dest': "ɔː" },
+
+    { 'src': "𐑸", 'dest': "ɑː" },
+    { 'src': "𐑹", 'dest': "ɔː" },
+    { 'src': "𐑺", 'dest': "ɛə" },
+    { 'src': "𐑻", 'dest': "ɜː" },
+    { 'src': "𐑼", 'dest': "ə" },
+    { 'src': "𐑽", 'dest': "ɪər" },
+    { 'src': "𐑾", 'dest': "ɪə" },
+    { 'src': "𐑿", 'dest': "ju" },
+  ]
+  for (var i = 0; i < mappings.length; i++) {
+    text = text.replace(mappings[i].src, mappings[i].dest);
+  }
+  return text
+}
 
 function pronouceWord(uipa) {
   // nothing to process
