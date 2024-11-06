@@ -7,6 +7,28 @@
   <link rel="stylesheet" type="text/css" href="./style.css">
 
   <style>
+    input {
+      color: white;
+      background-color: black;
+    }
+
+    body {
+      color: white;
+      background-color: black;
+    }
+
+    button {
+      top: 50%;
+      transform: translateY(-50%);
+      position: sticky;
+      color: white;
+      background-color: black;
+    }
+
+    .button-pronounce {
+      width: 5em;
+    }
+
     .column {
       float: left;
       width: 50%;
@@ -29,10 +51,17 @@
 </head>
 
 <body>
-  <div id="shavian-to-latin-test">
+  <div id="opener" class="row">
+    <button id="butn-shavian-to-latin" onclick="toggle('shavian-to-latin')"> shavian-to-latin </button>
+    <button id="butn-shavian-pronounce" onclick="toggle('shavian-pronounce')"> shavian-pronounce </button>
+  </div>
+
+
+  <div id="shavian-to-latin" class="hidden">
+    <h2> shavian to latin </h2>
     <div class="row">
       <div id="shavian" class="column" style="justify-content: right;"></div>
-      <button id="pronounce" class="column" style="width: 5em;top: 50%;transform: translateY(-50%);position: sticky;">
+      <button id="pronounce" class="column, button-pronounce">
         pronounce </button>
     </div>
     <form action="#" id="form" style="visibility: visible;">
@@ -45,7 +74,8 @@
 
   <br><br>
 
-  <div id="shavian-pronounce">
+  <div id="shavian-pronounce" class="hidden">
+    <h2> shavian pronouncer </h2>
     <form action="#" id="form-pronounce" style="visibility: visible;">
       shavian: <input type="string" id="shavian-pronounce-input">
       <input id="submit-shavian" type="submit" value="submit">
@@ -56,6 +86,16 @@
       meSpeak.loadVoice("./src/en.json");
     </script>
     <script src="./src/shavian-pronounce.js"></script>
+    <script>
+      function toggle(id) {
+        var x = document.getElementById(id);
+        if (x.classList.contains('hidden')) {
+          x.classList.remove('hidden')
+        } else {
+          x.classList.add('hidden')
+        }
+      }
+    </script>
   </div>
 </body>
 
