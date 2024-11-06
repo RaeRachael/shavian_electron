@@ -1,5 +1,4 @@
-{
-  "dictionary": [
+var  dictionary = [
     {
       "latin": "a",
       "shavian": "𐑩",
@@ -144111,4 +144110,3 @@
       "ipa": "ˈzjʊərɪk"
     }
   ]
-}

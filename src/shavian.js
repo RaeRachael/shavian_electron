@@ -1,7 +1,3 @@
-const fs = require('fs');
-
-let dictionary = JSON.parse(fs.readFileSync('./src/shavian_dictionary.json')).dictionary
-
 const formButton = document.querySelector("#form")
 let word = dictionary[Math.floor(Math.random() * dictionary.length)]
 
