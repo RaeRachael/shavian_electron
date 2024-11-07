@@ -26,7 +26,7 @@ formButton.addEventListener("submit", function (event) {
   event.preventDefault();   // stop the form from submitting
 
   let submitted = document.getElementById("latin_text")
-  displayResults(submitted.value)
+  displayResults(submitted.value.trim().toLowerCase())
   submitted.value = ""
   displayShavian()
 })
