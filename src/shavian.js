@@ -34,7 +34,7 @@ formButton.addEventListener("submit", function (event) {
 function displayResults(submitted) {
   const simulationResults = document.getElementById('result')
   let result_words = dictionary.filter(word_data => word_data.latin == submitted)
-  let result_word = result_words.find(word_found => word_found.ipa == word.ipa) || { ipa: "" }
+  let result_word = result_words.find(word_found => word_found.ipa == word.ipa) || result_words[0] || { ipa: "" }
   let result = result_word.ipa == word.ipa
   let colour = result ? "green" : "red"
 
