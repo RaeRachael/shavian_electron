@@ -87340,7 +87340,7 @@ var dictionary = [
     "ipa": "wʌn"
   },
   {
-    "latin": "one",
+    "latin": "won",
     "shavian": "𐑢𐑳𐑯",
     "ipa": "wʌn"
   },
